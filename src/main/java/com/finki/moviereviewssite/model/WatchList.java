@@ -14,7 +14,7 @@ public class WatchList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @OneToOne(mappedBy = "watchList", fetch = FetchType.LAZY)
     private User user;
 
     @ManyToMany
@@ -23,5 +23,8 @@ public class WatchList {
     public WatchList(User user) {
         this.user = user;
         this.movies = new ArrayList<>();
+    }
+
+    public WatchList() {
     }
 }

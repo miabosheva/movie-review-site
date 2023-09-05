@@ -12,7 +12,6 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "movie_site_users")
 public class User implements UserDetails {
 
     @Id
@@ -32,9 +31,11 @@ public class User implements UserDetails {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
+    @OneToOne
+    private WatchList watchList;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<WatchList> watchLists;
+    private List<Review> userReviews;
 
     public User() {
     }

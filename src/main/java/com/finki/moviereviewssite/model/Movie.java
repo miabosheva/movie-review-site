@@ -11,7 +11,7 @@ import java.util.List;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long movieId;
 
     private String title;
 
@@ -19,15 +19,15 @@ public class Movie {
 
     private String description;
 
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
     private List<Review> reviews = new ArrayList<>();
 
     public Movie() {
     }
 
-    public Movie(String title, Double totalRating, String description){
+    public Movie(String title, String description){
         this.title = title;
-        this.totalRating = totalRating;
+        this.totalRating = 0.0;
         this.description = description;
     }
 }

@@ -11,6 +11,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
     private User user;
 
     private String description;
@@ -18,12 +19,14 @@ public class Review {
     private Integer rating;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id")
     private Movie movie;
 
     public Review(User user, String description, Integer rating){
         this.description = description;
         this.user = user;
         this.rating = rating;
+    }
+
+    public Review(){
     }
 }

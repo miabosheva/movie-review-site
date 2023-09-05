@@ -1,4 +1,5 @@
 package com.finki.moviereviewssite.model.dto;
+
 import lombok.Data;
 
 @Data
@@ -8,7 +9,7 @@ public class MovieDto {
     private String description;
     private Long review;
 
-    public MovieDto(){
+    public MovieDto() {
     }
 
     public MovieDto(String title, String description, Double totalRating, Long review) {
