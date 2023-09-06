@@ -9,5 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface WatchListRepository extends JpaRepository<WatchList, Long> {
-    Optional<WatchList> findByUser(User user);
+    WatchList findByUser(User user);
+    Optional<WatchList> findById(Long id);
 }

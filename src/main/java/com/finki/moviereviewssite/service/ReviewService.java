@@ -9,17 +9,13 @@ import java.util.Optional;
 
 public interface ReviewService {
 
-    List<Review> findAll();
-
     Optional<Review> findById(Long id);
+
+    List<Review> findAllByMovie(Long id);
 
     List<Review> findAllByUser(User user);
 
-    Optional<Review> save(User user, String description, Integer rating);
-
     Optional<Review> save(ReviewDto reviewDto);
-
-    Optional<Review> edit(Long id, User user, String description, Integer rating);
 
     Optional<Review> edit(Long id, ReviewDto reviewDto);
 

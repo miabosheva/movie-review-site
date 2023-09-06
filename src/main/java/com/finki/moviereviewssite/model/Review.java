@@ -21,10 +21,11 @@ public class Review {
     @ManyToOne
     private Movie movie;
 
-    public Review(User user, String description, Integer rating){
+    public Review(User user, String description, Integer rating, Movie movie){
         this.description = description;
         this.user = user;
         this.rating = rating;
+        this.movie = movie;
     }
 
     public Review(){
